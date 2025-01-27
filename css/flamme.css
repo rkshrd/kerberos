@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 175px 1fr 50px;
+    background-color: #666;
+}
+/*DÉBUT HEADER*/
+    header {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        display: grid;
+        grid-template-columns: 100px 1fr 50px;
+        grid-template-rows: 150px 25px;
+        background-color: rgb(22, 22, 22);
+    }
+/*ZONE MENUE DEROULANT*/
+.menu-container {
+    position: relative;
+}
+
+#sommaire-button, .button_travaux {
+    all: unset;
+    cursor: pointer;
+}
+
+#sommaire-button img {
+    height: 87px;
+    width: 90px;
+}
+
+#dropdown-menu {
+    height: 100vh;
+    width: 120px;
+    background-color: #414141;
+    position: absolute;
+    top: 175px;
+    transform: translate(-100%);
+    transition: transform 0.3s ease;
+}
+
+/* Menu visible */
+#dropdown-menu.active {
+    transform: translateX(0);
+}
+
+.menu {
+    height: 45px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sous-menu principal */
+.submenu {
+    display: none; /* Cache le sous-menu par défaut */
+    position: absolute;
+    top: 0;
+    left: 200px; /* Le sous-menu s'affiche à droite du menu principal */
+    background-color: #555;
+    width: 180px;
+    border-radius: 5px;
+}
+
+/* Affichage du sous-menu au survol */
+.menu:hover .submenu {
+    display: block;
+}
+
+/* Affichage du sous-menu au clic (sur le bouton "Travaux") */
+.submenu.active {
+    display: block;
+}
+
+.submenu li {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button_sousm {
+    position: relative;
+}
+#sous_menu{
+    height: 200px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: absolute;
+    background-color: #414141;
+    padding: 10px;
+    left: 120px;
+    /* transform: translate(-100%); */
+    z-index: 1;
+}
+#sous_menu ul {
+    list-style-type: none;
+}
+/* Sous-sous-menus (Projets et Missions) */
+.submenu-projets, .submenu-missions {
+    display: none; /* Cache le sous-sous-menu par défaut */
+    position: absolute;
+    left: 180px; /* Décalage à droite du sous-menu */
+    background-color: #666;
+    width: 180px;
+    border-radius: 5px;
+}
+
+/* Affichage des sous-sous-menus au clic */
+.submenu-item:hover .submenu-projets,
+.submenu-item:hover .submenu-missions {
+    display: block;
+}
+
+/* FIN ZONE MENUE DEROULANT */
+
+/*ZONE TITRE - LOGO*/
+    .header-main {
+        height: 150px;
+
+        grid-column: 2/3;
+        color: #ec682e;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 2rem;
+        font-weight: bold;
+        background: linear-gradient(900deg, #ff924a, #a30000);
+        -webkit-background-clip: text; /* Utilisé pour découper le dégradé dans le texte */
+        -webkit-text-fill-color: transparent; /* Rend le fond du texte transparent */
+        }
+        #logo_box {
+            position: absolute;
+            height: 170px;
+            left: 400px;
+            top: -10px;
+            flex-basis: 1000px;
+            grid-column: 2 / 3;
+        }
+        #logo_index {
+            transform: rotate(-90deg);
+            height: 100%;
+            flex-basis: 100px;
+        }
+        #logo_box2 {
+            position: absolute;
+            height: 170px;
+            right: 345px;
+            top: -10px;
+            flex-basis: 1000px;
+            grid-column: 2 / 3;
+        }
+        #logo_index2 {
+            transform: rotate(90deg) scaleX(-1);
+            height: 100%;
+            flex-basis: 100px;
+        }
+        #real_time {
+            background-color: #414141;
+            top: 150px;
+            grid-column: 1/4;
+            grid-row: 2/3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .change_mod {
+            grid-template-columns: 3/4;
+        }
+    /*FIN ZONE TITRE - LOGO*/
+main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+/*ajout de vidéo en fond*/
+    #bloc_video {
+        position: relative;
+        height: 99.8%;
+        width: 100%;
+        overflow: hidden;
+    }
+    #bloc_video video{
+        position: relative;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -100;
+    }
+/*Fin d'ajout de vidéo*/   
+/*DÉBUT FOOTER*/
+footer {
+    position: relative;
+    background-color: #414141;
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+
+/*FIN FOOTER*/
+
+
+
+
+
+
+
